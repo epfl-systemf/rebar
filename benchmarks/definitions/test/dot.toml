@@ -29,6 +29,7 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/lite',
 ]
 analysis = '''
@@ -62,6 +63,7 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/lite',
 ]
 analysis = '''
@@ -88,6 +90,7 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/lite',
 ]
 analysis = '''
@@ -119,6 +122,7 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/lite',
 ]
 analysis = '''
@@ -150,6 +154,7 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/lite',
 ]
 analysis = '''
@@ -184,6 +189,7 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/lite',
 ]
 analysis = '''
@@ -215,6 +221,7 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/lite',
 ]
 analysis = '''
@@ -246,6 +253,7 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/lite',
 ]
 analysis = '''

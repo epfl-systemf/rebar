@@ -34,6 +34,7 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex-lookbehind',
 ]
 analysis = '''
 `dotnet/*` does not support `\pL` syntax. It instead requires `\p{L}`.
@@ -73,6 +74,7 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex-lookbehind',
 ]
 analysis = '''
 `python/re` doesn't support Unicode character classes at all.
@@ -111,6 +113,7 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex-lookbehind',
 ]
 analysis = '''
 `dotnet/*` doesn't match anything here, which is arguably incorrect but
@@ -148,6 +151,7 @@ engines = [
   'python/regex',
   'regress',
   'rust/regex',
+  'rust/regex-lookbehind',
 ]
 analysis = '''
 `dotnet/*` does not support `\p{Letter}` syntax.
@@ -180,6 +184,7 @@ engines = [
   'perl',
   'python/regex',
   'rust/regex',
+  'rust/regex-lookbehind',
 ]
 analysis = '''
 `dotnet/*` does not support `\p{Letter}` syntax.
@@ -221,6 +226,7 @@ engines = [
   'python/regex',
   'regress',
   'rust/regex',
+  'rust/regex-lookbehind',
 ]
 analysis = '''
 `d/dmd/std-regex` does not support `\p{gc=Letter}` syntax.
@@ -253,6 +259,7 @@ engines = [
   'perl',
   'python/regex',
   'rust/regex',
+  'rust/regex-lookbehind',
 ]
 analysis = '''
 `d/dmd/std-regex` does not support `\p{gc:Letter}` syntax.

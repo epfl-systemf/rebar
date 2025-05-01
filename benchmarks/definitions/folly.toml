@@ -28,6 +28,7 @@ engines = [
   'pcre2/jit',
   're2',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regexold',
 ]
 analysis = '''
@@ -59,6 +60,7 @@ engines = [
   # should raise eyebrows.
   'rust/memchr/memmem',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regexold',
 ]
 analysis = '''
@@ -90,6 +92,7 @@ engines = [
   # should raise eyebrows.
   'rust/memchr/memmem',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regexold',
 ]
 analysis = '''
@@ -120,6 +123,7 @@ engines = [
   're2',
   'rust/memchr/memmem',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regexold',
 ]
 analysis = '''

@@ -27,6 +27,7 @@ haystack = { path = "opensubtitles/en-tiny.txt", append = "Zoroastrianisms" }
 count = 1
 engines = [
   'rust/regex',
+  'rust/regex-lookbehind',
   # Maintains respectable speed (relative to what one can expect from the
   # PikeVM). This is the main point of comparison here, as the same regex
   # engine on what is essentially the same regex in the 'pattern-per-word'
@@ -55,6 +56,7 @@ engines = [
   # Currently uses an Aho-Corasick NFA and does well, but it builds an
   # enormous prefilter and could use some love.
   'rust/regex',
+  'rust/regex-lookbehind',
   # Perf is generally quite bad because it spends all of its time shuffling
   # states around for one big alternation.
   'rust/regex/pikevm',

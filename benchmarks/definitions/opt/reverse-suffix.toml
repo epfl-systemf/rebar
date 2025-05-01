@@ -17,6 +17,7 @@ haystack = { path = "sherlock.txt" }
 count = 4073
 engines = [
   'rust/regex',
+  'rust/regex-lookbehind',
   # Does not do it. Included as a point of comparison.
   'rust/regex/hybrid',
   'rust/regexold',
@@ -43,6 +44,7 @@ engines = [
   # This should run at some reasonable speed, ideally in a similar ballpark
   # as hyrbid.
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/hybrid',
   'rust/regexold',
   're2',

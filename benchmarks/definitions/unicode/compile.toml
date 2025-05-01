@@ -20,6 +20,7 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/dense',
   'rust/regex/nfa',
   'rust/regexold',
@@ -41,6 +42,7 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/dense',
   'rust/regex/nfa',
   'rust/regexold',
@@ -74,6 +76,7 @@ count = [
 ]
 engines = [
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/dense',
   'rust/regex/nfa',
   'rust/regexold',
@@ -105,6 +108,7 @@ engines = [
   'pcre2/jit',
   're2',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/nfa',
   'rust/regexold',
 ]
@@ -121,6 +125,7 @@ haystack = { path = "lines-with-invalid-utf8.txt" }
 count = 4
 engines = [
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/nfa',
   'rust/regexold',
   're2',
@@ -152,6 +157,7 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/nfa',
   'rust/regexold',
 ]

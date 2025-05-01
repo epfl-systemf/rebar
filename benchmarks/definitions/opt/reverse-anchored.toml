@@ -14,6 +14,7 @@ count = 1
 engines = [
   # Does a reverse anchored search.
   'rust/regex',
+  'rust/regex-lookbehind',
   # Does not.
   'rust/regex/hybrid',
   # Does it!

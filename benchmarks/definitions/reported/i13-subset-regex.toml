@@ -57,6 +57,7 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regexold',
 ]
 analysis = '''
@@ -97,6 +98,7 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regexold',
 ]
 analysis = '''
@@ -129,6 +131,7 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regexold',
 ]
 analysis = '''
@@ -161,6 +164,7 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regexold',
 ]
 analysis = '''
@@ -192,6 +196,7 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regexold',
 ]
 analysis = '''
@@ -223,6 +228,7 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regexold',
 ]
 analysis = '''
@@ -256,6 +262,7 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regexold',
 ]
 analysis = '''
@@ -287,6 +294,7 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regexold',
 ]
 analysis = '''

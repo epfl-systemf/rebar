@@ -16,6 +16,7 @@ unicode = true
 count = 2
 engines = [
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/dense',
   'rust/regex/ast',
   'rust/regex/hir',
@@ -37,6 +38,7 @@ count = [
 ]
 engines = [
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/dense',
   'rust/regex/hybrid',
   'rust/regexold',
@@ -56,6 +58,7 @@ count = [
 ]
 engines = [
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/dense',
   'rust/regex/hybrid',
   'rust/regex/pikevm',

@@ -29,6 +29,7 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regexold',
 ]
 
@@ -47,6 +48,7 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regexold',
 ]
 analysis = '''

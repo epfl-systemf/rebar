@@ -27,6 +27,7 @@ count = 1
 engines = [
   're2',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/ast',
   'rust/regex/hir',
   'rust/regex/lite',
@@ -49,6 +50,7 @@ count = 1
 engines = [
   're2',
   'rust/regex',
+  'rust/regex-lookbehind',
   'rust/regex/ast',
   'rust/regex/hir',
   'rust/regex/lite',
