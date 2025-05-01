@@ -41,6 +41,7 @@ exclude = [
   "engines/rust/regex-lite",
   "engines/rust/regex-old",
   "engines/rust/regex-syntax",
+  "engines/rust/regex-lookbehind",
 ]
 
 [[bin]]

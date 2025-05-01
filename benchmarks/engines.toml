@@ -36,6 +36,21 @@
     bin = "cargo"
     args = ["clean"]
 
+[[engine]]
+  name = "rust/regex-lookbehind"
+  cwd = "../engines/rust/regex-lookbehind"
+  [engine.version]
+    bin = "./target/release/main"
+    args = ["--version"]
+  [engine.run]
+    bin = "./target/release/main"
+  [[engine.build]]
+    bin = "cargo"
+    args = ["build", "--release"]
+  [[engine.clean]]
+    bin = "cargo"
+    args = ["clean"]
+
 # The regex-lite crate. It's like the regex crate, but it prioritizes small
 # binary size and shorter compilation times over functionality and performance.
 [[engine]]
