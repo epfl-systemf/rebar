@@ -1,0 +1,98 @@
+analysis = '''
+This benchmark is designed to measure the throughput of regular expressions
+using lookbehind assertions. Furthermore, it is intended to show that the
+implementation of lookbehind assertions in rust/regex satisfies the linear
+time complexity requirement.
+'''
+
+[[bench]]
+model = "count"
+name = "snort-0"
+regex = { path = "lookbehind/snort_0.txt", literal = false }
+haystack = { path = "imported/wrccd.pcap", line-end = 500000 }
+count = 9
+engines = ['python/re', 'rust/regex-lookbehind']
+analysis = '''
+python/re is included as a count verifier because it supports lookbehind
+assertions.
+'''
+
+[[bench]]
+model = "count"
+name = "snort-1"
+regex = { path = "lookbehind/snort_1.txt", literal = false }
+haystack = { path = "imported/wrccd.pcap", line-end = 500000 }
+count = 0
+engines = ['python/re', 'rust/regex-lookbehind']
+
+[[bench]]
+model = "count"
+name = "snort-2"
+regex = { path = "lookbehind/snort_2.txt", literal = false }
+haystack = { path = "imported/wrccd.pcap", line-end = 500000 }
+count = 0
+engines = ['python/re', 'rust/regex-lookbehind']
+
+[[bench]]
+model = "count"
+name = "snort-3"
+regex = { path = "lookbehind/snort_3.txt", literal = false }
+haystack = { path = "imported/wrccd.pcap", line-end = 500000 }
+count = 0
+engines = ['python/re', 'rust/regex-lookbehind']
+
+[[bench]]
+model = "count"
+name = "snort-4"
+regex = { path = "lookbehind/snort_4.txt", literal = false }
+haystack = { path = "imported/wrccd.pcap", line-end = 500000 }
+count = 0
+engines = ['python/re', 'rust/regex-lookbehind']
+
+[[bench]]
+model = "count"
+name = "linear-haystack-1000"
+regex = "(?<=a)b"
+haystack = { contents = "b", repeat = 1000, append = "ab" }
+count = 1
+engines = ['python/re', 'rust/regex-lookbehind']
+
+[[bench]]
+model = "count"
+name = "linear-haystack-10000"
+regex = "(?<=a)b"
+haystack = { contents = "b", repeat = 10000, append = "ab" }
+count = 1
+engines = ['python/re', 'rust/regex-lookbehind']
+
+[[bench]]
+model = "count"
+name = "linear-haystack-100000"
+regex = "(?<=a)b"
+haystack = { contents = "b", repeat = 100000, append = "ab" }
+count = 1
+engines = ['python/re', 'rust/regex-lookbehind']
+
+[[bench]]
+model = "count"
+name = "linear-haystack-many-1000"
+regex = "(?<=a)b"
+haystack = { contents = "ab", repeat = 1000 }
+count = 1000
+engines = ['python/re', 'rust/regex-lookbehind']
+
+[[bench]]
+model = "count"
+name = "linear-haystack-many-10000"
+regex = "(?<=a)b"
+haystack = { contents = "ab", repeat = 10000 }
+count = 10000
+engines = ['python/re', 'rust/regex-lookbehind']
+
+[[bench]]
+model = "count"
+name = "linear-haystack-many-100000"
+regex = "(?<=a)b"
+haystack = { contents = "ab", repeat = 100000 }
+count = 100000
+engines = ['python/re', 'rust/regex-lookbehind']
