@@ -21,9 +21,12 @@ def find_regexes(content):
     return regexes
 
 def enumerate_files(directory):
+    result = []
     for root, dirs, files in os.walk(directory):
         for file in files:
-            yield os.path.join(root, file)
+            result.append(os.path.join(root, file))
+    result.sort()
+    return result
 
 def collect_regexes(directory):
     for path in enumerate_files(directory):
