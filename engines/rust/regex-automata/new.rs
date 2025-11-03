@@ -2,7 +2,7 @@ use regex_automata::{
     nfa::thompson::pikevm::{self, PrefilterStrategy},
     util::prefilter::Prefilter,
 };
-use regex_syntax::{hir, Parser};
+use regex_syntax::{hir, ParserBuilder};
 
 use crate::Config;
 
@@ -126,7 +126,14 @@ fn pre_config(c: &Config, strategy: PrefilterStrategy) -> pikevm::Config {
         c.b.regex
             .patterns
             .iter()
-            .map(|p| Parser::new().parse(p).unwrap())
+            .map(|p| {
+                ParserBuilder::new()
+                    .case_insensitive(c.b.regex.case_insensitive)
+                    .unicode(c.b.regex.unicode)
+                    .build()
+                    .parse(p)
+                    .unwrap()
+            })
             .collect::<Vec<hir::Hir>>();
 
     let pre = Prefilter::from_hirs_prefix(
