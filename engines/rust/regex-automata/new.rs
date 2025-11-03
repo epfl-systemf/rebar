@@ -101,6 +101,62 @@ pub(crate) fn pikevm(
     Ok(re)
 }
 
+pub(crate) fn pikevm_no_acc(
+    c: &Config,
+) -> anyhow::Result<regex_automata::nfa::thompson::pikevm::PikeVM> {
+    use regex_automata::nfa::thompson::{self, pikevm::PikeVM};
+
+    let re = PikeVM::builder()
+        .syntax(syntax_config(c))
+        // Disabling UTF-8 here just means that zero-width matches that split
+        // a codepoint are allowed.
+        .thompson(thompson::Config::new().utf8(false))
+        .build_many(&c.b.regex.patterns)?;
+    Ok(re)
+}
+
+pub(crate) fn pikevm_acc_once(
+    c: &Config,
+) -> anyhow::Result<regex_automata::nfa::thompson::pikevm::PikeVM> {
+    use regex_automata::nfa::thompson::{self, pikevm::PikeVM};
+
+    let re = PikeVM::builder()
+        .syntax(syntax_config(c))
+        // Disabling UTF-8 here just means that zero-width matches that split
+        // a codepoint are allowed.
+        .thompson(thompson::Config::new().utf8(false))
+        .build_many(&c.b.regex.patterns)?;
+    Ok(re)
+}
+
+pub(crate) fn pikevm_acc_empty_states(
+    c: &Config,
+) -> anyhow::Result<regex_automata::nfa::thompson::pikevm::PikeVM> {
+    use regex_automata::nfa::thompson::{self, pikevm::PikeVM};
+
+    let re = PikeVM::builder()
+        .syntax(syntax_config(c))
+        // Disabling UTF-8 here just means that zero-width matches that split
+        // a codepoint are allowed.
+        .thompson(thompson::Config::new().utf8(false))
+        .build_many(&c.b.regex.patterns)?;
+    Ok(re)
+}
+
+pub(crate) fn pikevm_acc_one_ahead(
+    c: &Config,
+) -> anyhow::Result<regex_automata::nfa::thompson::pikevm::PikeVM> {
+    use regex_automata::nfa::thompson::{self, pikevm::PikeVM};
+
+    let re = PikeVM::builder()
+        .syntax(syntax_config(c))
+        // Disabling UTF-8 here just means that zero-width matches that split
+        // a codepoint are allowed.
+        .thompson(thompson::Config::new().utf8(false))
+        .build_many(&c.b.regex.patterns)?;
+    Ok(re)
+}
+
 /// Constructor for the bounded backtracker. Like the PikeVM, it can handle
 /// Unicode word boundaries and resolving capturing groups, but only works on
 /// smaller inputs/regexes. The small size is required because it keeps track

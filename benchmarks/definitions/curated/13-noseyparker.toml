@@ -54,14 +54,15 @@ model = "count"
 name = "single"
 regex = { path = "wild/noseyparker.txt", per-line = "alternate" }
 haystack = { path = 'wild/cpython-226484e4.py', utf8-lossy = true }
-count = [
-  { engine = 'hyperscan', count = 241 },
-  { engine = '.*', count = 55 },
-]
+count = [{ engine = 'hyperscan', count = 241 }, { engine = '.*', count = 55 }]
 engines = [
   'hyperscan',
   'pcre2/jit',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
 ]
 analysis = '''
@@ -86,13 +87,14 @@ model = "count"
 name = "multi"
 regex = { path = "wild/noseyparker.txt", per-line = "pattern" }
 haystack = { path = 'wild/cpython-226484e4.py', utf8-lossy = true }
-count = [
-  { engine = 'hyperscan', count = 241 },
-  { engine = '.*', count = 55 },
-]
+count = [{ engine = 'hyperscan', count = 241 }, { engine = '.*', count = 55 }]
 engines = [
   'hyperscan',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 Only `hyperscan` and `rust/regex` are included because they are the only
@@ -111,6 +113,10 @@ engines = [
   'hyperscan',
   'pcre2/jit',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
 ]
 analysis = '''
@@ -126,6 +132,10 @@ count = 1
 engines = [
   'hyperscan',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 We only include the engines that are measured in the `multi` benchmark.

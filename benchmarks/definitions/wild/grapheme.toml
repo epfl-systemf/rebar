@@ -16,6 +16,10 @@ unicode = true
 count = 2
 engines = [
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/dense',
   'rust/regex/ast',
   'rust/regex/hir',
@@ -37,6 +41,10 @@ count = [
 ]
 engines = [
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/dense',
   'rust/regex/hybrid',
   'rust/regexold',
@@ -59,6 +67,10 @@ engines = [
   'rust/regex/dense',
   'rust/regex/hybrid',
   'rust/regex/pikevm',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
   'python/regex',
 ]

@@ -61,6 +61,10 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
   'rust/regexold',
 ]
@@ -91,6 +95,10 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
 ]
 
@@ -99,10 +107,7 @@ model = "count"
 name = "context"
 regex = '[A-Za-z]{10}\s+[\s\S]{0,100}Result[\s\S]{0,100}\s+[A-Za-z]{10}'
 haystack = { path = "rust-src-tools-3b0d4813.txt" }
-count = [
-  { engine = 'hyperscan', count = 109 },
-  { engine = '.*', count = 53 },
-]
+count = [{ engine = 'hyperscan', count = 109 }, { engine = '.*', count = 53 }]
 engines = [
   'd/ldc/std-regex',
   'dotnet/compiled',
@@ -120,6 +125,10 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
   'rust/regexold',
 ]
@@ -129,10 +138,7 @@ model = "count"
 name = "capitals"
 regex = '(?:[A-Z][a-z]+\s*){10,100}'
 haystack = { path = "rust-src-tools-3b0d4813.txt" }
-count = [
-  { engine = 'hyperscan', count = 237 },
-  { engine = '.*', count = 11 },
-]
+count = [{ engine = 'hyperscan', count = 237 }, { engine = '.*', count = 11 }]
 engines = [
   'd/ldc/std-regex',
   'dotnet/compiled',
@@ -150,6 +156,10 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
   'rust/regexold',
 ]
@@ -172,6 +182,10 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
   'rust/regexold',
 ]
@@ -184,10 +198,7 @@ model = "compile"
 name = "compile-capitals"
 regex = '(?:[A-Z][a-z]+\s*){10,100}'
 haystack = 'Crazy Janey Mission Man Wild Billy Greasy Lake Hazy Davy Killer Joe'
-count = [
-  { engine = 'hyperscan', count = 12 },
-  { engine = '.*', count = 1 },
-]
+count = [{ engine = 'hyperscan', count = 12 }, { engine = '.*', count = 1 }]
 engines = [
   'dotnet/compiled',
   'dotnet/nobacktrack',
@@ -201,6 +212,10 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
   'rust/regexold',
 ]

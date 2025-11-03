@@ -16,10 +16,7 @@ name = "compile"
 regex = { path = "wild/url.txt" }
 haystack = 'https://google.com'
 case-insensitive = true
-count = [
-  { engine = 'hyperscan', count = 2 },
-  { engine = '.*', count = 1 },
-]
+count = [{ engine = 'hyperscan', count = 2 }, { engine = '.*', count = 1 }]
 engines = [
   'go/regexp',
   'hyperscan',
@@ -29,6 +26,10 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
 ]
 
@@ -47,6 +48,10 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
 ]
 analysis = '''

@@ -35,5 +35,9 @@ engines = [
   'python/re',
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
 ]

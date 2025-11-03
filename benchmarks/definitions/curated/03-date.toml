@@ -96,6 +96,10 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
   'rust/regexold',
 ]
@@ -130,6 +134,10 @@ engines = [
   'python/regex',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
 ]
 analysis = '''
@@ -161,10 +169,7 @@ name = "compile-ascii"
 regex = { path = "wild/date.txt" }
 case-insensitive = true
 haystack = "2010-03-14"
-count = [
-  { engine = 'hyperscan', count = 10 },
-  { engine = '.*', count = 5 },
-]
+count = [{ engine = 'hyperscan', count = 10 }, { engine = '.*', count = 5 }]
 engines = [
   'go/regexp',
   'hyperscan',
@@ -176,6 +181,10 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
   'rust/regexold',
 ]
@@ -208,6 +217,10 @@ engines = [
   'python/regex',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
 ]
 analysis = '''

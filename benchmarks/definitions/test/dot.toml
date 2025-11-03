@@ -29,6 +29,10 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
 ]
 analysis = '''
@@ -62,6 +66,10 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
 ]
 analysis = '''
@@ -88,6 +96,10 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
 ]
 analysis = '''
@@ -119,6 +131,10 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
 ]
 analysis = '''
@@ -150,6 +166,10 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
 ]
 analysis = '''
@@ -166,10 +186,7 @@ model = "count"
 name = "multiline-carriage-return"
 regex = '(?m:.)'
 haystack = "\r"
-count = [
-  { engine = '^(icu)$', count = 0 },
-  { engine = '.*', count = 1 },
-]
+count = [{ engine = '^(icu)$', count = 0 }, { engine = '.*', count = 1 }]
 engines = [
   'dotnet',
   'dotnet/compiled',
@@ -184,6 +201,10 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
 ]
 analysis = '''
@@ -215,6 +236,10 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
 ]
 analysis = '''
@@ -246,6 +271,10 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
 ]
 analysis = '''

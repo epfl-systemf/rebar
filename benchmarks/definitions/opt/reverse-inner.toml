@@ -28,6 +28,10 @@ haystack = { path = "sherlock.txt" }
 count = 2593
 engines = [
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   # Does not do it. Included as a point of comparison.
   'rust/regex/hybrid',
   # Does not do it.
@@ -54,6 +58,10 @@ haystack = { path = "rust-src-tools-3b0d4813.txt" }
 count = 47
 engines = [
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   # Does not do it. Included as a point of comparison.
   'rust/regex/hybrid',
   # Does not do it.
@@ -84,6 +92,10 @@ haystack = { path = "sherlock.txt" }
 count = 3542
 engines = [
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/hybrid',
   'rust/regexold',
   're2',
@@ -117,6 +129,10 @@ engines = [
   # This should run at some reasonable speed, ideally in a similar ballpark
   # as hybrid.
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/hybrid',
   'rust/regexold',
   're2',
@@ -147,6 +163,10 @@ engines = [
   # This should run at some reasonable speed, ideally in a similar ballpark
   # as hybrid.
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/hybrid',
   'rust/regexold',
   're2',

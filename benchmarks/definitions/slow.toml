@@ -19,6 +19,10 @@ engines = [
   'rust/regex/lite',
   'rust/regexold',
   'rust/regex/pikevm',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 This one shows a particularly gnarly case where each search scans to the end
@@ -67,6 +71,10 @@ engines = [
   'rust/regex/lite',
   'rust/regexold',
   'rust/regex/pikevm',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 This is like `quadratic-regex-1x`, but doubles the counted repetition and
@@ -105,6 +113,10 @@ engines = [
   'rust/regex/lite',
   'rust/regexold',
   'rust/regex/pikevm',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 This is another case where the search is actually quadratic in the length of
@@ -141,6 +153,10 @@ engines = [
   'rust/regex/lite',
   'rust/regexold',
   'rust/regex/pikevm',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 This is like `quadratic-haystack-1x`, but doubles the haystack length. This

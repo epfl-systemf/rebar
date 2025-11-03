@@ -27,10 +27,14 @@ haystack = 'abcdef'
 count = 0
 engines = [
   # Does it.
-	'rust/regex',
+  'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   # Does not do it because it is a lower level regex engine. Included as a
   # point of comparison.
-	'rust/regex/hybrid',
+  'rust/regex/hybrid',
   # Does not do it.
   'rust/regexold',
   # Does not appear to do it.
@@ -54,9 +58,13 @@ haystack = '𝛃𝛃𝛃𝛃𝛃𝛃𝛃𝛃𝛃'
 unicode = true
 count = 0
 engines = [
-	'rust/regex',
+  'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   # Does not do it. Included as a point of comparison.
-	'rust/regex/hybrid',
+  'rust/regex/hybrid',
   # Does not do it.
   'rust/regexold',
 ]
@@ -81,9 +89,13 @@ regex = '^\w{30}$'
 haystack = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'
 count = 0
 engines = [
-	'rust/regex',
+  'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   # Does not do it. Included as a point of comparison.
-	'rust/regex/hybrid',
+  'rust/regex/hybrid',
   # Does not do it.
   'rust/regexold',
   # Does not do it.
@@ -104,9 +116,13 @@ haystack = '𝛃𝛃𝛃𝛃𝛃𝛃𝛃𝛃𝛃𝛃𝛃'
 unicode = true
 count = 0
 engines = [
-	'rust/regex',
+  'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   # Does not do it. Included as a point of comparison.
-	'rust/regex/hybrid',
+  'rust/regex/hybrid',
   # Does not do it.
   'rust/regexold',
 ]
@@ -122,6 +138,10 @@ haystack = { contents = 'a', repeat = 10_000 }
 count = 0
 engines = [
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   # Does not do it. Included as a point of comparison.
   'rust/regex/hybrid',
   # Does not do it.
@@ -141,6 +161,10 @@ haystack = { contents = 'a', repeat = 10_000 }
 count = 0
 engines = [
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   # Does not do it. Included as a point of comparison.
   'rust/regex/hybrid',
   # Does not do it.
@@ -161,6 +185,10 @@ haystack = { contents = 'a', repeat = 1_000 }
 count = 0
 engines = [
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   # Does not do it. Included as a point of comparison.
   'rust/regex/hybrid',
   # Does not do it.

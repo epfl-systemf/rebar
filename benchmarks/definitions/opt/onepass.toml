@@ -52,6 +52,10 @@ engines = [
   'rust/regex/backtrack',
   'rust/regex/onepass',
   'rust/regex/pikevm',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
 ]
 analysis = '''
@@ -85,6 +89,10 @@ engines = [
   'rust/regex/backtrack',
   'rust/regex/onepass',
   'rust/regex/pikevm',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
 ]
 analysis = '''
@@ -107,6 +115,10 @@ engines = [
   'rust/regex/backtrack',
   'rust/regex/onepass',
   'rust/regex/pikevm',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
 ]
 analysis = '''
@@ -128,6 +140,10 @@ engines = [
   'rust/regex/backtrack',
   'rust/regex/onepass',
   'rust/regex/pikevm',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
 ]
 analysis = '''
@@ -151,6 +167,10 @@ engines = [
   'rust/regex/backtrack',
   'rust/regex/onepass',
   'rust/regex/pikevm',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
 ]
 analysis = '''

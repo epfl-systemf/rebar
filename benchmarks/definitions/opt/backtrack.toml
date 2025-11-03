@@ -56,6 +56,10 @@ engines = [
   'rust/regex/backtrack',
   'rust/regexold',
   'rust/regex/pikevm',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 This just looks for words of length 6 or 5. Everything here is just ASCII
@@ -76,6 +80,10 @@ engines = [
   'rust/regex/backtrack',
   'rust/regexold',
   'rust/regex/pikevm',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 Like `words-english`, but makes everything Unicode aware. We also limit our
