@@ -93,6 +93,10 @@ engines = [
   'rust/regex',
   'rust/regexold',
   'rust/regex/pikevm',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 This benchmark compares the new NFA compiler with the old one, where the
@@ -142,6 +146,10 @@ engines = [
   'rust/regex',
   'rust/regexold',
   'rust/regex/pikevm',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 This is like the byte oriented benchmark above, except it tweaks the regex to

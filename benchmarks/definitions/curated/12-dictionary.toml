@@ -120,6 +120,10 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
   'rust/regexold',
 ]
@@ -140,6 +144,10 @@ count = 1
 engines = [
   'hyperscan',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 Only `hyperscan` and `rust/regex` are included because they are the only regex
@@ -163,6 +171,10 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/lite',
   'rust/regexold',
 ]
@@ -193,6 +205,10 @@ count = 1
 engines = [
   'hyperscan',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 Only `hyperscan` and `rust/regex` are included because they are the only regex

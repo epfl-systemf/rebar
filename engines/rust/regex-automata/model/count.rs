@@ -8,6 +8,10 @@ pub(crate) fn run(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
         "hybrid" => hybrid(c),
         "backtrack" => backtrack(c),
         "pikevm" => pikevm(c),
+        "pikevm/noAcc" => pikevm_no_acc(c),
+        "pikevm/accOnce" => pikevm_acc_once(c),
+        "pikevm/accEmptyStates" => pikevm_acc_empty_states(c),
+        "pikevm/accOneAhead" => pikevm_acc_one_ahead(c),
         _ => unreachable!(),
     }
 }
@@ -60,6 +64,34 @@ fn backtrack(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
 fn pikevm(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
     let haystack = &*c.b.haystack;
     let re = new::pikevm(c)?;
+    let mut cache = re.create_cache();
+    timer::run(&c.b, || Ok(re.find_iter(&mut cache, haystack).count()))
+}
+
+fn pikevm_no_acc(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
+    let haystack = &*c.b.haystack;
+    let re = new::pikevm_no_acc(c)?;
+    let mut cache = re.create_cache();
+    timer::run(&c.b, || Ok(re.find_iter(&mut cache, haystack).count()))
+}
+
+fn pikevm_acc_once(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
+    let haystack = &*c.b.haystack;
+    let re = new::pikevm_acc_once(c)?;
+    let mut cache = re.create_cache();
+    timer::run(&c.b, || Ok(re.find_iter(&mut cache, haystack).count()))
+}
+
+fn pikevm_acc_empty_states(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
+    let haystack = &*c.b.haystack;
+    let re = new::pikevm_acc_empty_states(c)?;
+    let mut cache = re.create_cache();
+    timer::run(&c.b, || Ok(re.find_iter(&mut cache, haystack).count()))
+}
+
+fn pikevm_acc_one_ahead(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
+    let haystack = &*c.b.haystack;
+    let re = new::pikevm_acc_one_ahead(c)?;
     let mut cache = re.create_cache();
     timer::run(&c.b, || Ok(re.find_iter(&mut cache, haystack).count()))
 }

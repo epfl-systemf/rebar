@@ -10,6 +10,10 @@ pub(crate) fn run(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
         "backtrack" => backtrack(c),
         "pikevm" => pikevm(c),
         "onepass" => onepass(c),
+        "pikevm/noAcc" => pikevm_no_acc(c),
+        "pikevm/accOnce" => pikevm_acc_once(c),
+        "pikevm/accEmptyStates" => pikevm_acc_empty_states(c),
+        "pikevm/accOneAhead" => pikevm_acc_one_ahead(c),
         _ => unreachable!(),
     }
 }
@@ -95,6 +99,50 @@ fn pikevm(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
             Ok(re.find_iter(&mut cache, &c.b.haystack).count())
         },
         || new::pikevm(c),
+    )
+}
+
+fn pikevm_no_acc(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
+    timer::run_and_count(
+        &c.b,
+        |re: regex_automata::nfa::thompson::pikevm::PikeVM| {
+            let mut cache = re.create_cache();
+            Ok(re.find_iter(&mut cache, &c.b.haystack).count())
+        },
+        || new::pikevm_no_acc(c),
+    )
+}
+
+fn pikevm_acc_once(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
+    timer::run_and_count(
+        &c.b,
+        |re: regex_automata::nfa::thompson::pikevm::PikeVM| {
+            let mut cache = re.create_cache();
+            Ok(re.find_iter(&mut cache, &c.b.haystack).count())
+        },
+        || new::pikevm_acc_once(c),
+    )
+}
+
+fn pikevm_acc_empty_states(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
+    timer::run_and_count(
+        &c.b,
+        |re: regex_automata::nfa::thompson::pikevm::PikeVM| {
+            let mut cache = re.create_cache();
+            Ok(re.find_iter(&mut cache, &c.b.haystack).count())
+        },
+        || new::pikevm_acc_empty_states(c),
+    )
+}
+
+fn pikevm_acc_one_ahead(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
+    timer::run_and_count(
+        &c.b,
+        |re: regex_automata::nfa::thompson::pikevm::PikeVM| {
+            let mut cache = re.create_cache();
+            Ok(re.find_iter(&mut cache, &c.b.haystack).count())
+        },
+        || new::pikevm_acc_one_ahead(c),
     )
 }
 

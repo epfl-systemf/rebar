@@ -31,10 +31,7 @@ model = "count"
 name = "email"
 regex = '[\w\.+-]+@[\w\.-]+\.[\w\.-]+'
 haystack = { path = "imported/mariomka.txt" }
-count = [
-  { engine = 'hyperscan', count = 351 },
-  { engine = '.*', count = 92 },
-]
+count = [{ engine = 'hyperscan', count = 351 }, { engine = '.*', count = 92 }]
 engines = [
   'd/dmd/std-regex',
   'd/ldc/std-regex',
@@ -53,6 +50,10 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
 ]
 
@@ -83,6 +84,10 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
 ]
 
@@ -110,5 +115,9 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
 ]

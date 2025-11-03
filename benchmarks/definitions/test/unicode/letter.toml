@@ -34,6 +34,10 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 `dotnet/*` does not support `\pL` syntax. It instead requires `\p{L}`.
@@ -73,6 +77,10 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 `python/re` doesn't support Unicode character classes at all.
@@ -90,10 +98,7 @@ name = "pLbraced-matches-nonbmp-delta"
 regex = '\p{L}'
 unicode = true
 haystack = '𝛅'
-count = [
-  { engine = 'dotnet.*', count = 0 },
-  { engine = '.*', count = 1 },
-]
+count = [{ engine = 'dotnet.*', count = 0 }, { engine = '.*', count = 1 }]
 engines = [
   'd/dmd/std-regex',
   'dotnet',
@@ -111,6 +116,10 @@ engines = [
   're2',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 `dotnet/*` doesn't match anything here, which is arguably incorrect but
@@ -148,6 +157,10 @@ engines = [
   'python/regex',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 `dotnet/*` does not support `\p{Letter}` syntax.
@@ -180,6 +193,10 @@ engines = [
   'perl',
   'python/regex',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 `dotnet/*` does not support `\p{Letter}` syntax.
@@ -221,6 +238,10 @@ engines = [
   'python/regex',
   'regress',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 `d/dmd/std-regex` does not support `\p{gc=Letter}` syntax.
@@ -253,6 +274,10 @@ engines = [
   'perl',
   'python/regex',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 `d/dmd/std-regex` does not support `\p{gc:Letter}` syntax.

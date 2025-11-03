@@ -19,6 +19,10 @@ const ENGINES: &[&str] = &[
     "onepass",
     "pikevm",
     "sparse",
+    "pikevm/noAcc",
+    "pikevm/accOnce",
+    "pikevm/accEmptyStates",
+    "pikevm/accOneAhead",
 ];
 
 /// Since this runner has a lot of engines (all of the regex crate's internal

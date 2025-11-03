@@ -40,6 +40,10 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 `d/dmd/std-regex` does not support searching arbitrary bytes.
@@ -83,6 +87,10 @@ engines = [
   'perl',
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 `d/dmd/std-regex` does not support searching arbitrary bytes.
@@ -122,6 +130,10 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 `d/dmd/std-regex` does not support searching arbitrary bytes.
@@ -177,6 +189,10 @@ engines = [
   'perl',
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 `d/dmd/std-regex` does not support searching arbitrary bytes.
@@ -215,6 +231,10 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
 ]
 analysis = '''
 `d/dmd/std-regex` does not support searching arbitrary bytes.

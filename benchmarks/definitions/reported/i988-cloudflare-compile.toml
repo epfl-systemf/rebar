@@ -27,6 +27,10 @@ count = 1
 engines = [
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/ast',
   'rust/regex/hir',
   'rust/regex/lite',
@@ -49,6 +53,10 @@ count = 1
 engines = [
   're2',
   'rust/regex',
+  'rust/regex/pikevm/noAcc',
+  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm/accEmptyStates',
+  'rust/regex/pikevm/accOneAhead',
   'rust/regex/ast',
   'rust/regex/hir',
   'rust/regex/lite',
