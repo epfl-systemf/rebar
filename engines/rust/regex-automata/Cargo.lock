@@ -174,7 +174,7 @@ dependencies = [
 [[package]]
 name = "regex-automata"
 version = "0.4.14"
-source = "git+https://github.com/LindenRegex/rust-regex?branch=mw%2Fprefix-acc-cmp#e6f222e2aef8e76a1cb66113e7caa75001b7099e"
+source = "git+https://github.com/LindenRegex/rust-regex?branch=mw%2Fprefix-acc-cmp#2657cdbc65dcb1500f3591c746fffdf907606125"
 dependencies = [
  "aho-corasick",
  "log",
@@ -196,7 +196,7 @@ source = "git+https://github.com/rust-lang/regex?branch=master#839d16bc65b60e200
 [[package]]
 name = "regex-syntax"
 version = "0.8.10"
-source = "git+https://github.com/LindenRegex/rust-regex?branch=mw%2Fprefix-acc-cmp#e6f222e2aef8e76a1cb66113e7caa75001b7099e"
+source = "git+https://github.com/LindenRegex/rust-regex?branch=mw%2Fprefix-acc-cmp#2657cdbc65dcb1500f3591c746fffdf907606125"
 
 [[package]]
 name = "regexredux"
