@@ -17,8 +17,7 @@ haystack = { path = "sherlock.txt" }
 count = 4073
 engines = [
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   # Does not do it. Included as a point of comparison.
@@ -47,8 +46,7 @@ engines = [
   # This should run at some reasonable speed, ideally in a similar ballpark
   # as hyrbid.
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   'rust/regex/hybrid',

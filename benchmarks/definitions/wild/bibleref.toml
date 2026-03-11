@@ -24,8 +24,7 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   'rust/regex/ast',
@@ -46,8 +45,7 @@ unicode = true
 count = 874
 engines = [
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
@@ -77,8 +75,7 @@ engines = [
   'python/regex',
   're2',
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
@@ -115,8 +112,7 @@ unicode = true
 count = 874
 engines = [
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   'rust/regexold',

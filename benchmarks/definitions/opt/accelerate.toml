@@ -22,8 +22,7 @@ haystack = { path = "rust-src-tools-3b0d4813.txt" }
 count = 239_963
 engines = [
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   'rust/regex/dense',
@@ -45,8 +44,7 @@ haystack = { path = "imported/regex-redux-100000.fasta" }
 count = 16_745
 engines = [
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   'rust/regex/dense',

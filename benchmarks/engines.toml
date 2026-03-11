@@ -655,36 +655,6 @@
     args = ["clean"]
 
 [[engine]]
-  name = "rust/regex/pikevm/noAcc"
-  cwd = "../engines/rust/regex-automata"
-  [engine.version]
-    bin = "./target/release/main"
-    args = ["pikevm/noAcc", "--version"]
-  [engine.run]
-    bin = "./target/release/main"
-    args = ["pikevm/noAcc"]
-  [[engine.build]]
-    bin = "cargo"
-    args = ["build", "--release"]
-  [[engine.clean]]
-    bin = "cargo"
-    args = ["clean"]
-[[engine]]
-  name = "rust/regex/pikevm/accOnce"
-  cwd = "../engines/rust/regex-automata"
-  [engine.version]
-    bin = "./target/release/main"
-    args = ["pikevm/accOnce", "--version"]
-  [engine.run]
-    bin = "./target/release/main"
-    args = ["pikevm/accOnce"]
-  [[engine.build]]
-    bin = "cargo"
-    args = ["build", "--release"]
-  [[engine.clean]]
-    bin = "cargo"
-    args = ["clean"]
-[[engine]]
   name = "rust/regex/pikevm/accEmptyStates"
   cwd = "../engines/rust/regex-automata"
   [engine.version]

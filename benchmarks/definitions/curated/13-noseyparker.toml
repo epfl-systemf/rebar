@@ -59,8 +59,7 @@ engines = [
   'hyperscan',
   'pcre2/jit',
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
@@ -91,8 +90,7 @@ count = [{ engine = 'hyperscan', count = 241 }, { engine = '.*', count = 55 }]
 engines = [
   'hyperscan',
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
 ]
@@ -113,8 +111,7 @@ engines = [
   'hyperscan',
   'pcre2/jit',
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   'rust/regexold',
@@ -132,8 +129,7 @@ count = 1
 engines = [
   'hyperscan',
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
 ]

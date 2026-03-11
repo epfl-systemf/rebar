@@ -8,8 +8,6 @@ pub(crate) fn run(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
         "meta" => meta(c),
         "backtrack" => backtrack(c),
         "pikevm" => pikevm(c),
-        "pikevm/noAcc" => pikevm_no_acc(c),
-        "pikevm/accOnce" => pikevm_acc_once(c),
         "pikevm/accEmptyStates" => pikevm_acc_empty_states(c),
         "pikevm/accOneAhead" => pikevm_acc_one_ahead(c),
         _ => unreachable!(),
@@ -67,54 +65,6 @@ fn backtrack(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
 fn pikevm(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
     let mut input = Input::new(&c.b.haystack);
     let re = new::pikevm(c)?;
-    let (mut cache, mut caps) = (re.create_cache(), re.create_captures());
-    timer::run(&c.b, || {
-        input.set_start(0);
-        let mut count = 0;
-        while let Some(m) = {
-            re.search(&mut cache, &input, &mut caps);
-            caps.get_match()
-        } {
-            for i in 0..caps.group_len() {
-                if caps.get_group(i).is_some() {
-                    count += 1;
-                }
-            }
-            // Benchmark definition says we may assume empty matches are
-            // impossible.
-            input.set_start(m.end());
-        }
-        Ok(count)
-    })
-}
-
-fn pikevm_no_acc(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
-    let mut input = InputNew::new(&c.b.haystack);
-    let re = new::pikevm_no_acc(c)?;
-    let (mut cache, mut caps) = (re.create_cache(), re.create_captures());
-    timer::run(&c.b, || {
-        input.set_start(0);
-        let mut count = 0;
-        while let Some(m) = {
-            re.search(&mut cache, &input, &mut caps);
-            caps.get_match()
-        } {
-            for i in 0..caps.group_len() {
-                if caps.get_group(i).is_some() {
-                    count += 1;
-                }
-            }
-            // Benchmark definition says we may assume empty matches are
-            // impossible.
-            input.set_start(m.end());
-        }
-        Ok(count)
-    })
-}
-
-fn pikevm_acc_once(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
-    let mut input = InputNew::new(&c.b.haystack);
-    let re = new::pikevm_acc_once(c)?;
     let (mut cache, mut caps) = (re.create_cache(), re.create_captures());
     timer::run(&c.b, || {
         input.set_start(0);

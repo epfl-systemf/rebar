@@ -56,8 +56,7 @@ engines = [
   'rust/regex/backtrack',
   'rust/regexold',
   'rust/regex/pikevm',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
 ]
@@ -80,8 +79,7 @@ engines = [
   'rust/regex/backtrack',
   'rust/regexold',
   'rust/regex/pikevm',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
 ]

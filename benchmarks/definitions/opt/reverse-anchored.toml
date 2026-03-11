@@ -14,8 +14,7 @@ count = 1
 engines = [
   # Does a reverse anchored search.
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   # Does not.

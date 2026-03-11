@@ -19,8 +19,6 @@ const ENGINES: &[&str] = &[
     "onepass",
     "pikevm",
     "sparse",
-    "pikevm/noAcc",
-    "pikevm/accOnce",
     "pikevm/accEmptyStates",
     "pikevm/accOneAhead",
 ];

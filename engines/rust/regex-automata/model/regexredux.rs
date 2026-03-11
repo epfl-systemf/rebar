@@ -6,8 +6,6 @@ pub(crate) fn run(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
         "dense" => dense(c),
         "hybrid" => hybrid(c),
         "pikevm" => pikevm(c),
-        "pikevm/noAcc" => pikevm_no_acc(c),
-        "pikevm/accOnce" => pikevm_acc_once(c),
         "pikevm/accEmptyStates" => pikevm_acc_empty_states(c),
         "pikevm/accOneAhead" => pikevm_acc_one_ahead(c),
         _ => unreachable!(),
@@ -69,47 +67,6 @@ fn hybrid(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
 }
 
 fn pikevm(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
-    use regex_automata::{
-        nfa::thompson::{self, pikevm::PikeVM},
-        util::captures::Captures,
-    };
-
-    let haystack = c.b.haystack_str()?;
-    let compile = |pattern: &str| -> anyhow::Result<regexredux::RegexFn> {
-        let re = PikeVM::builder()
-            .syntax(new::syntax_config(c))
-            .thompson(thompson::Config::new().utf8(false))
-            .build(pattern)?;
-        let mut cache = re.create_cache();
-        let mut caps = Captures::matches(re.get_nfa().group_info().clone());
-        let find = move |h: &str| -> anyhow::Result<Option<(usize, usize)>> {
-            re.captures(&mut cache, h, &mut caps);
-            Ok(caps.get_match().map(|m| (m.start(), m.end())))
-        };
-        Ok(Box::new(find))
-    };
-    timer::run(&c.b, || regexredux::generic(haystack, compile))
-}
-
-fn pikevm_no_acc(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
-    use regex_automata::nfa::thompson::{self, pikevm::PikeVM};
-
-    let haystack = c.b.haystack_str()?;
-    let compile = |pattern: &str| -> anyhow::Result<regexredux::RegexFn> {
-        let re = PikeVM::builder()
-            .syntax(new::syntax_config(c))
-            .thompson(thompson::Config::new().utf8(false))
-            .build(pattern)?;
-        let mut cache = re.create_cache();
-        let find = move |h: &str| -> anyhow::Result<Option<(usize, usize)>> {
-            Ok(re.find(&mut cache, h).map(|m| (m.start(), m.end())))
-        };
-        Ok(Box::new(find))
-    };
-    timer::run(&c.b, || regexredux::generic(haystack, compile))
-}
-
-fn pikevm_acc_once(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
     use regex_automata::{
         nfa::thompson::{self, pikevm::PikeVM},
         util::captures::Captures,

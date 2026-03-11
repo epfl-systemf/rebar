@@ -111,12 +111,6 @@ pub(crate) fn pikevm(
     Ok(re)
 }
 
-pub(crate) fn pikevm_no_acc(
-    _: &Config,
-) -> anyhow::Result<regex_automata_new::nfa::thompson::pikevm::PikeVM> {
-    panic!("This does not matter")
-}
-
 fn pre_config_new(
     c: &Config,
     strategy: PrefilterStrategy,
@@ -178,12 +172,6 @@ fn pre_config(c: &Config) -> pikevm::Config {
     };
 
     pikevm::Config::new().prefilter(pre)
-}
-
-pub(crate) fn pikevm_acc_once(
-    _: &Config,
-) -> anyhow::Result<regex_automata_new::nfa::thompson::pikevm::PikeVM> {
-    panic!("This does not matter")
 }
 
 pub(crate) fn pikevm_acc_empty_states(

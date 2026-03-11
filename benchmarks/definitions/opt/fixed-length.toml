@@ -28,8 +28,7 @@ count = 0
 engines = [
   # Does it.
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   # Does not do it because it is a lower level regex engine. Included as a
@@ -59,8 +58,7 @@ unicode = true
 count = 0
 engines = [
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   # Does not do it. Included as a point of comparison.
@@ -90,8 +88,7 @@ haystack = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'
 count = 0
 engines = [
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   # Does not do it. Included as a point of comparison.
@@ -117,8 +114,7 @@ unicode = true
 count = 0
 engines = [
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   # Does not do it. Included as a point of comparison.
@@ -138,8 +134,7 @@ haystack = { contents = 'a', repeat = 10_000 }
 count = 0
 engines = [
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   # Does not do it. Included as a point of comparison.
@@ -161,8 +156,7 @@ haystack = { contents = 'a', repeat = 10_000 }
 count = 0
 engines = [
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   # Does not do it. Included as a point of comparison.
@@ -185,8 +179,7 @@ haystack = { contents = 'a', repeat = 1_000 }
 count = 0
 engines = [
   'rust/regex',
-  'rust/regex/pikevm/noAcc',
-  'rust/regex/pikevm/accOnce',
+  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
   # Does not do it. Included as a point of comparison.
