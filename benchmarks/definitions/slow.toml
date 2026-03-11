@@ -19,7 +19,6 @@ engines = [
   'rust/regex/lite',
   'rust/regexold',
   'rust/regex/pikevm',
-  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
 ]
@@ -70,7 +69,6 @@ engines = [
   'rust/regex/lite',
   'rust/regexold',
   'rust/regex/pikevm',
-  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
 ]
@@ -111,7 +109,6 @@ engines = [
   'rust/regex/lite',
   'rust/regexold',
   'rust/regex/pikevm',
-  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
 ]
@@ -149,7 +146,6 @@ engines = [
   'rust/regex',
   'rust/regex/lite',
   'rust/regexold',
-  'rust/regex/pikevm',
   'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',

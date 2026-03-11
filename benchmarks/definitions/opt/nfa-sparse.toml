@@ -93,7 +93,6 @@ engines = [
   'rust/regex',
   'rust/regexold',
   'rust/regex/pikevm',
-  'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
 ]
@@ -144,7 +143,6 @@ count = 0
 engines = [
   'rust/regex',
   'rust/regexold',
-  'rust/regex/pikevm',
   'rust/regex/pikevm',
   'rust/regex/pikevm/accEmptyStates',
   'rust/regex/pikevm/accOneAhead',
