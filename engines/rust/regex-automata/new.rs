@@ -145,18 +145,9 @@ fn pre_config(c: &Config, strategy: PrefilterStrategy) -> pikevm::Config {
 }
 
 pub(crate) fn pikevm_acc_once(
-    c: &Config,
+    _: &Config,
 ) -> anyhow::Result<regex_automata::nfa::thompson::pikevm::PikeVM> {
-    use regex_automata::nfa::thompson::{self, pikevm::PikeVM};
-
-    let re = PikeVM::builder()
-        .configure(pre_config(c, PrefilterStrategy::Once))
-        .syntax(syntax_config(c))
-        // Disabling UTF-8 here just means that zero-width matches that split
-        // a codepoint are allowed.
-        .thompson(thompson::Config::new().utf8(false))
-        .build_many(&c.b.regex.patterns)?;
-    Ok(re)
+    panic!("This does not matter")
 }
 
 pub(crate) fn pikevm_acc_empty_states(
