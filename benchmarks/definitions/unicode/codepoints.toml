@@ -63,7 +63,7 @@ count = [
   # Very likely due to update to Unicode 15.1.
   { engine = '^re2$', count = 1250 },
   # Very likely due to update to Unicode 16.
-  { engine = '^rust/regex|pcre2.*$', count = 1289 },
+  { engine = '^rust/regex.*|pcre2.*$', count = 1289 },
   # Very likely due to update to Unicode 17.
   { engine = '^python/regex$', count = 1333 },
   { engine = '.*', count = 1244 },
@@ -113,7 +113,7 @@ count = [
   # Very likely due to update to Unicode 15.1.
   { engine = '^re2$', count = 1250 },
   # Very likely due to update to Unicode 16.
-  { engine = '^rust/regex$', count = 1289 },
+  { engine = '^rust/regex.*$', count = 1289 },
   { engine = '^python/regex$', count = 1333 },
   # Maybe a different version of Unicode?
   { engine = 'pcre2/jit', count = 1203 },
