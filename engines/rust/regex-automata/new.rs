@@ -126,20 +126,27 @@ fn pre_config(c: &Config, strategy: PrefilterStrategy) -> pikevm::Config {
         c.b.regex
             .patterns
             .iter()
-            .map(|p| {
-                ParserBuilder::new()
-                    .case_insensitive(c.b.regex.case_insensitive)
-                    .unicode(c.b.regex.unicode)
-                    .build()
-                    .parse(p)
-                    .unwrap()
-            })
+            // we ignore failed extractions of the HIR. Unclear why they happen at all
+            .flat_map(
+                #[allow(clippy::result_large_err)]
+                |p| {
+                    ParserBuilder::new()
+                        .case_insensitive(c.b.regex.case_insensitive)
+                        .unicode(c.b.regex.unicode)
+                        .build()
+                        .parse(p)
+                },
+            )
             .collect::<Vec<hir::Hir>>();
 
-    let pre = Prefilter::from_hirs_prefix(
-        regex_automata::MatchKind::LeftmostFirst,
-        &hirs,
-    );
+    let pre = if hirs.is_empty() {
+        None
+    } else {
+        Prefilter::from_hirs_prefix(
+            regex_automata::MatchKind::LeftmostFirst,
+            &hirs,
+        )
+    };
 
     pikevm::Config::new().prefilter(pre).prefilter_strategy(strategy)
 }

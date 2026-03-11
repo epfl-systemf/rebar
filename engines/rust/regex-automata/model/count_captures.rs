@@ -7,10 +7,10 @@ pub(crate) fn run(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
         "meta" => meta(c),
         "backtrack" => backtrack(c),
         "pikevm" => pikevm(c),
-        "pikevm_no_acc" => pikevm_no_acc(c),
-        "pikevm_acc_once" => pikevm_acc_once(c),
-        "pikevm_acc_empty_states" => pikevm_acc_empty_states(c),
-        "pikevm_acc_one_ahead" => pikevm_acc_one_ahead(c),
+        "pikevm/noAcc" => pikevm_no_acc(c),
+        "pikevm/accOnce" => pikevm_acc_once(c),
+        "pikevm/accEmptyStates" => pikevm_acc_empty_states(c),
+        "pikevm/accOneAhead" => pikevm_acc_one_ahead(c),
         _ => unreachable!(),
     }
 }
