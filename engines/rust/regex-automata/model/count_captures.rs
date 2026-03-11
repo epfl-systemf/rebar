@@ -1,4 +1,5 @@
 use regex_automata::Input;
+use regex_automata_new::Input as InputNew;
 
 use crate::{new, Config};
 
@@ -88,7 +89,7 @@ fn pikevm(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
 }
 
 fn pikevm_no_acc(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
-    let mut input = Input::new(&c.b.haystack);
+    let mut input = InputNew::new(&c.b.haystack);
     let re = new::pikevm_no_acc(c)?;
     let (mut cache, mut caps) = (re.create_cache(), re.create_captures());
     timer::run(&c.b, || {
@@ -112,7 +113,7 @@ fn pikevm_no_acc(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
 }
 
 fn pikevm_acc_once(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
-    let mut input = Input::new(&c.b.haystack);
+    let mut input = InputNew::new(&c.b.haystack);
     let re = new::pikevm_acc_once(c)?;
     let (mut cache, mut caps) = (re.create_cache(), re.create_captures());
     timer::run(&c.b, || {
@@ -136,7 +137,7 @@ fn pikevm_acc_once(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
 }
 
 fn pikevm_acc_empty_states(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
-    let mut input = Input::new(&c.b.haystack);
+    let mut input = InputNew::new(&c.b.haystack);
     let re = new::pikevm_acc_empty_states(c)?;
     let (mut cache, mut caps) = (re.create_cache(), re.create_captures());
     timer::run(&c.b, || {
@@ -160,7 +161,7 @@ fn pikevm_acc_empty_states(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
 }
 
 fn pikevm_acc_one_ahead(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
-    let mut input = Input::new(&c.b.haystack);
+    let mut input = InputNew::new(&c.b.haystack);
     let re = new::pikevm_acc_one_ahead(c)?;
     let (mut cache, mut caps) = (re.create_cache(), re.create_captures());
     timer::run(&c.b, || {

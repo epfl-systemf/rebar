@@ -1,6 +1,7 @@
 use bstr::ByteSlice;
 
 use regex_automata::{Anchored, Input};
+use regex_automata_new::Input as InputNew;
 
 use crate::{new, Config};
 
@@ -103,7 +104,7 @@ fn pikevm_no_acc(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
     timer::run(&c.b, || {
         let mut count = 0;
         for line in haystack.lines() {
-            let mut input = Input::new(line);
+            let mut input = InputNew::new(line);
             while let Some(m) = {
                 re.search(&mut cache, &input, &mut caps);
                 caps.get_match()
@@ -129,7 +130,7 @@ fn pikevm_acc_once(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
     timer::run(&c.b, || {
         let mut count = 0;
         for line in haystack.lines() {
-            let mut input = Input::new(line);
+            let mut input = InputNew::new(line);
             while let Some(m) = {
                 re.search(&mut cache, &input, &mut caps);
                 caps.get_match()
@@ -155,7 +156,7 @@ fn pikevm_acc_empty_states(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
     timer::run(&c.b, || {
         let mut count = 0;
         for line in haystack.lines() {
-            let mut input = Input::new(line);
+            let mut input = InputNew::new(line);
             while let Some(m) = {
                 re.search(&mut cache, &input, &mut caps);
                 caps.get_match()
@@ -181,7 +182,7 @@ fn pikevm_acc_one_ahead(c: &Config) -> anyhow::Result<Vec<timer::Sample>> {
     timer::run(&c.b, || {
         let mut count = 0;
         for line in haystack.lines() {
-            let mut input = Input::new(line);
+            let mut input = InputNew::new(line);
             while let Some(m) = {
                 re.search(&mut cache, &input, &mut caps);
                 caps.get_match()

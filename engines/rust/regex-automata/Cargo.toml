@@ -24,10 +24,14 @@ lexopt = "0.3.0"
 # parsing the Cargo.lock file would be inappropriate as that doesn't mean the
 # engine is available to run. Otherwise, it would be fine to just rely on
 # 'Cargo.lock' for version pinning and we could drop the '=' constraint here.
-regex-automata = { git = "https://github.com/LindenRegex/rust-regex", branch = "mw/prefix-acc-cmp", version = "=0.4.14", features = [
+regex-automata = { git = "https://github.com/rust-lang/regex", branch = "master", version = "=0.4.14", features = [
 	"logging",
 ] }
-regex-syntax = { git = "https://github.com/LindenRegex/rust-regex", branch = "mw/prefix-acc-cmp", version = "=0.8.10" }
+regex-syntax = { git = "https://github.com/rust-lang/regex", branch = "master", version = "=0.8.10" }
+regex-automata-new = { git = "https://github.com/LindenRegex/rust-regex", branch = "mw/prefix-acc-cmp", version = "=0.4.14", features = [
+	"logging",
+], package = "regex-automata" }
+regex-syntax-new = { git = "https://github.com/LindenRegex/rust-regex", branch = "mw/prefix-acc-cmp", version = "=0.8.10", package = "regex-syntax" }
 
 [dependencies.klv]
 path = "../../../shared/klv"

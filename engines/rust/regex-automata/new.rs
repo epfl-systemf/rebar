@@ -1,8 +1,11 @@
-use regex_automata::{
-    nfa::thompson::pikevm::{self, PrefilterStrategy},
-    util::prefilter::Prefilter,
+use regex_automata::{nfa::thompson::pikevm, util::prefilter::Prefilter};
+use regex_automata_new::{
+    nfa::thompson::pikevm as pikevm_new,
+    nfa::thompson::pikevm::PrefilterStrategy,
+    util::prefilter::Prefilter as PrefilterNew,
 };
 use regex_syntax::{hir, ParserBuilder};
+use regex_syntax_new::{hir as hir_new, ParserBuilder as ParserBuilderNew};
 
 use crate::Config;
 
@@ -100,6 +103,7 @@ pub(crate) fn pikevm(
 
     let re = PikeVM::builder()
         .syntax(syntax_config(c))
+        .configure(pre_config(c))
         // Disabling UTF-8 here just means that zero-width matches that split
         // a codepoint are allowed.
         .thompson(thompson::Config::new().utf8(false))
@@ -108,20 +112,45 @@ pub(crate) fn pikevm(
 }
 
 pub(crate) fn pikevm_no_acc(
-    c: &Config,
-) -> anyhow::Result<regex_automata::nfa::thompson::pikevm::PikeVM> {
-    use regex_automata::nfa::thompson::{self, pikevm::PikeVM};
-
-    let re = PikeVM::builder()
-        .syntax(syntax_config(c))
-        // Disabling UTF-8 here just means that zero-width matches that split
-        // a codepoint are allowed.
-        .thompson(thompson::Config::new().utf8(false))
-        .build_many(&c.b.regex.patterns)?;
-    Ok(re)
+    _: &Config,
+) -> anyhow::Result<regex_automata_new::nfa::thompson::pikevm::PikeVM> {
+    panic!("This does not matter")
 }
 
-fn pre_config(c: &Config, strategy: PrefilterStrategy) -> pikevm::Config {
+fn pre_config_new(
+    c: &Config,
+    strategy: PrefilterStrategy,
+) -> pikevm_new::Config {
+    let hirs =
+        c.b.regex
+            .patterns
+            .iter()
+            // we ignore failed extractions of the HIR. Unclear why they happen at all
+            .flat_map(
+                #[allow(clippy::result_large_err)]
+                |p| {
+                    ParserBuilderNew::new()
+                        .case_insensitive(c.b.regex.case_insensitive)
+                        .unicode(c.b.regex.unicode)
+                        .build()
+                        .parse(p)
+                },
+            )
+            .collect::<Vec<hir_new::Hir>>();
+
+    let pre = if hirs.is_empty() {
+        None
+    } else {
+        PrefilterNew::from_hirs_prefix(
+            regex_automata_new::MatchKind::LeftmostFirst,
+            &hirs,
+        )
+    };
+
+    pikevm_new::Config::new().prefilter(pre).prefilter_strategy(strategy)
+}
+
+fn pre_config(c: &Config) -> pikevm::Config {
     let hirs =
         c.b.regex
             .patterns
@@ -148,23 +177,23 @@ fn pre_config(c: &Config, strategy: PrefilterStrategy) -> pikevm::Config {
         )
     };
 
-    pikevm::Config::new().prefilter(pre).prefilter_strategy(strategy)
+    pikevm::Config::new().prefilter(pre)
 }
 
 pub(crate) fn pikevm_acc_once(
     _: &Config,
-) -> anyhow::Result<regex_automata::nfa::thompson::pikevm::PikeVM> {
+) -> anyhow::Result<regex_automata_new::nfa::thompson::pikevm::PikeVM> {
     panic!("This does not matter")
 }
 
 pub(crate) fn pikevm_acc_empty_states(
     c: &Config,
-) -> anyhow::Result<regex_automata::nfa::thompson::pikevm::PikeVM> {
-    use regex_automata::nfa::thompson::{self, pikevm::PikeVM};
+) -> anyhow::Result<regex_automata_new::nfa::thompson::pikevm::PikeVM> {
+    use regex_automata_new::nfa::thompson::{self, pikevm::PikeVM};
 
     let re = PikeVM::builder()
-        .configure(pre_config(c, PrefilterStrategy::OnEmptyStates))
-        .syntax(syntax_config(c))
+        .configure(pre_config_new(c, PrefilterStrategy::OnEmptyStates))
+        .syntax(syntax_config_new(c))
         // Disabling UTF-8 here just means that zero-width matches that split
         // a codepoint are allowed.
         .thompson(thompson::Config::new().utf8(false))
@@ -174,12 +203,12 @@ pub(crate) fn pikevm_acc_empty_states(
 
 pub(crate) fn pikevm_acc_one_ahead(
     c: &Config,
-) -> anyhow::Result<regex_automata::nfa::thompson::pikevm::PikeVM> {
-    use regex_automata::nfa::thompson::{self, pikevm::PikeVM};
+) -> anyhow::Result<regex_automata_new::nfa::thompson::pikevm::PikeVM> {
+    use regex_automata_new::nfa::thompson::{self, pikevm::PikeVM};
 
     let re = PikeVM::builder()
-        .configure(pre_config(c, PrefilterStrategy::OneAhead))
-        .syntax(syntax_config(c))
+        .configure(pre_config_new(c, PrefilterStrategy::OneAhead))
+        .syntax(syntax_config_new(c))
         // Disabling UTF-8 here just means that zero-width matches that split
         // a codepoint are allowed.
         .thompson(thompson::Config::new().utf8(false))
@@ -233,6 +262,20 @@ pub(crate) fn syntax_config(
     c: &Config,
 ) -> regex_automata::util::syntax::Config {
     regex_automata::util::syntax::Config::new()
+        // Disabling UTF-8 just makes it possible to build regexes that won't
+        // necessarily match UTF-8. Whether Unicode is actually usable or not
+        // depends on the 'unicode' option.
+        .utf8(false)
+        .unicode(c.b.regex.unicode)
+        .case_insensitive(c.b.regex.case_insensitive)
+}
+
+/// For regex-automata based regex engines, this builds a syntax configuration
+/// from a benchmark definition.
+pub(crate) fn syntax_config_new(
+    c: &Config,
+) -> regex_automata_new::util::syntax::Config {
+    regex_automata_new::util::syntax::Config::new()
         // Disabling UTF-8 just makes it possible to build regexes that won't
         // necessarily match UTF-8. Whether Unicode is actually usable or not
         // depends on the 'unicode' option.
